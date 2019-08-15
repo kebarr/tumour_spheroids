@@ -59,8 +59,8 @@ filter_missval <- function(se, thr=0, max_repl=3){
 }
 
 
+# steps as outline in Introduction to DEP (https://bioconductor.org/packages/devel/bioc/vignettes/DEP/inst/doc/DEP.html#generate-a-data.frame-from-the-resulting-summarizedexperiment-object)
 data_se <-make_se(AYA_GO_unique, u87_columns[7:12], exp_design)
-data_filt <-filter_missval(data_se)
 data_filt <-filter_missval(data_se)
 data_norm <- normalize_vsn(data_filt)
 data_imp <- impute(data_norm, fun = "MinProb", q = 0.01)
